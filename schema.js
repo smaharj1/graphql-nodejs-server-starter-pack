@@ -8,12 +8,18 @@ type User {
   email: String!
 }
 
+type UserAuth{
+  _id: String,
+  username: String!,
+  password: String!
+}
+
 type Query {
   allUsers: [User]
 }
 
 type Mutation {
-  createUser(username: String!, first_name: String!, last_name: String!, email: String!): User
+  register(username: String!, password: String!, first_name: String!, last_name: String!, email: String!): User
 }
 
 `;
