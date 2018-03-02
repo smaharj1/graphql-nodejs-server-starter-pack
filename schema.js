@@ -11,7 +11,7 @@ type User {
 type UserAuth{
   _id: String,
   username: String!,
-  password: String!
+  password: String
 }
 
 type Query {
@@ -20,6 +20,7 @@ type Query {
 
 type Mutation {
   register(username: String!, password: String!, first_name: String!, last_name: String!, email: String!): User
+  login(username: String!, password: String!): String!
 }
 
 `;

@@ -5,7 +5,7 @@ const userAuthModel = {
             password: String
           })
     
-        const UserAuth = mongoose.model('user_auth', user_auth);
+        const UserAuth = mongoose.model('user_auths', user_auth);
     
         return UserAuth;
     }
