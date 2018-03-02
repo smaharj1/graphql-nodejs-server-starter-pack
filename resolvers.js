@@ -6,7 +6,10 @@ let saltRounds = 10;
 
 export default {
   Query: {
-    allUsers: async (parent, args, { models }) => {
+    allUsers: async (parent, args, { models, user }) => {
+      if (!user){
+        throw new Error("Unauthorized")
+      }
       const usersFound = await models.users.find();
       return usersFound.map((x) => {
         x._id = x._id.toString();
